@@ -35,7 +35,7 @@ namespace Yearbook.Controllers
         public IActionResult UpdateStudentToDatabase(Student student)
         {
             repo.UpdateStudent(student);
-            return RedirectToAction("ViewStudent", new { name = student.FirstName });
+            return RedirectToAction("ViewStudent", new { id = student.StudentID });
         }
 
         public IActionResult CreateStudent()

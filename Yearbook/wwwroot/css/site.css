@@ -86,3 +86,6 @@ td a:hover {
     height: auto;
     margin: 10px;
 }
+.navbar navbar-light bg-light {
+    padding: 0;
+}

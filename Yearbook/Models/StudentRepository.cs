@@ -19,8 +19,8 @@ namespace Yearbook.Models
 
         public void CreateStudent(Student newStudent)
         {
-            _conn.Execute("INSERT INTO Student (FirstName, LastName, Picture, Gender, State, Email, Hobbies, FavoriteFood, FavoriteSong, FavoriteMovie, FutureCareer, Quote) VALUES (@FirstName, @LastName, @Picture, @Gender, @State, @Email, @Hobbies, @FavoriteFood, @FavoriteSong, @FavoriteMovie, @FutureCareer, @Quote);",
-                new {newStudent.FirstName, newStudent.LastName, newStudent.Picture, newStudent.Gender, newStudent.State, newStudent.Email, newStudent.Hobbies, newStudent.FavoriteFood, newStudent.FavoriteSong, newStudent.FavoriteMovie, newStudent.FutureCareer, newStudent.Quote } );
+            _conn.Execute("INSERT INTO Student (StudentID, FirstName, LastName, Picture, Gender, State, Email, Hobbies, FavoriteFood, FavoriteSong, FavoriteMovie, FutureCareer, Quote) VALUES (@StudentID, @FirstName, @LastName, @Picture, @Gender, @State, @Email, @Hobbies, @FavoriteFood, @FavoriteSong, @FavoriteMovie, @FutureCareer, @Quote);",
+                new {studentid = newStudent.StudentID, firstname = newStudent.FirstName, lastname = newStudent.LastName, picture = newStudent.Picture, gender = newStudent.Gender, state = newStudent.State, email = newStudent.Email, hobbies = newStudent.Hobbies, favoritefood = newStudent.FavoriteFood, favoritesong = newStudent.FavoriteSong, favoritemovie = newStudent.FavoriteMovie, futurecareer = newStudent.FutureCareer, quote = newStudent.Quote } );
         }
 
         public Student SelectState()
@@ -51,8 +51,8 @@ namespace Yearbook.Models
 
         public void UpdateStudent(Student student)
         {
-            _conn.Execute("UPDATE STUDENT SET StudentName = @StudentName, Picture = @picture, Gender = @gender, States = @state, Email = @email, Hobbies = @hobbies, FavoriteFood = @favoritefood, FavoriteSong = @favoritesong, FavoriteMovie = @favoritemovie, FutureCareer = @futurecareer, Quote = @quote;",
-                new { studentname = student.FirstName });
+            _conn.Execute("UPDATE STUDENT SET firstName = @firstName, lastName = @lastName, Picture = @picture, Gender = @gender, State = @state, Email = @email, Hobbies = @hobbies, FavoriteFood = @favoritefood, FavoriteSong = @favoritesong, FavoriteMovie = @favoritemovie, FutureCareer = @futurecareer, Quote = @quote WHERE StudentID = @studentid;",
+                new { studentid = student.StudentID, firstname = student.FirstName, lastname = student.LastName, picture = student.Picture, gender= student.Gender, state = student.State, email = student.Email, hobbies = student.Hobbies, favoritefood = student.FavoriteFood, favoritesong = student.FavoriteSong, favoritemovie= student.FavoriteMovie, futurecareer = student.FutureCareer, quote = student.Quote });
         }
 
         public Student ViewStudent(int id)
@@ -61,7 +61,7 @@ namespace Yearbook.Models
         }
         public void DeleteStudent(Student studentName)
         {
-            _conn.Execute("DELETE FROM STUDENT WHERE STUDENTNAME= @STUDENTNAME;", new { studentname = studentName.FirstName });
+            _conn.Execute("DELETE FROM STUDENT WHERE STUDENTID = @STUDENTID;", new { studentid = studentName.StudentID });
         }
 
         
