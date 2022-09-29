@@ -6,4 +6,24 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Content\**" />
+    <Content Remove="Content\**" />
+    <EmbeddedResource Remove="Content\**" />
+    <None Remove="Content\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Startup.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\images\Graduation3.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="MySql.Data" Version="8.0.30" />
+  </ItemGroup>
+
 </Project>

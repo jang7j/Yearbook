@@ -1,0 +1,61 @@
+﻿@model Student
+
+<h2>Create a New Product</h2>
+
+@using (Html.BeginForm("CreateStudentToDatabase", "Student", "Post"))
+{
+    <label asp-for="FirstName" class="control-label">First Name</label>
+    <input type="text" name="FirstName" class="form-control" value="" />
+
+     <label asp-for="LastName" class="control-label">Last Name</label>
+    <input type="text" name="LastName" class="form-control" value="" />
+
+     <div class="form-group">
+        <label for="">Gender</label>
+        <select class="form-control" name="Gender" value="" >
+            @foreach (var g in Model.Genders)
+            {
+                <option value="@g.Genders">@g.Genders @g.GenderName</option>
+                
+            }
+        </select>
+    </div>
+
+
+     <div class="form-group">
+        <label for="">State</label>
+        <select class="form-control" name="State" value="" >
+            @foreach (var s in Model.States)
+            {
+                <option value="@s.States">@s.States @s.StateName</option>
+            }
+        </select>
+    </div>
+
+
+    <label asp-for="Email" class="control-label">Email</label>
+    <input type="text" name="Email" class="form-control" value="" />
+
+    <label asp-for="Hobbies" class="control-label">Hobbies</label>
+    <input type="text" name="Hobbies" class="form-control" value="" />
+
+    <label asp-for="FavoriteFood" class="control-label">Favorite Food</label>
+    <input type="text" name="FavoriteFood" class="form-control" value="" />
+
+    <label asp-for="FavoriteSong" class="control-label">Favorite Song</label>
+    <input type="text" name="FavoriteSong" class="form-control" value="" />
+
+    <label asp-for="FavoriteMovie" class="control-label">Favorite Movie</label>
+    <input type="text" name="FavoriteMovie" class="form-control" value="" />
+
+    <label asp-for="FutureCareer" class="control-label">Future Career</label>
+    <input type="text" name="FutureCareer" class="form-control" value="" />
+
+     <label asp-for="Quote" class="control-label">Quote</label>
+    <input type="text" name="Quote" class="form-control" value="" />
+
+  
+    <input type="submit" value="Create Student" class="btn btn-primary" />
+
+   
+  }

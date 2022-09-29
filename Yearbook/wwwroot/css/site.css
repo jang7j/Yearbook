@@ -1,18 +1,88 @@
-html {
-  font-size: 14px;
+body {
+    font-family: 'Inter Tight', sans-serif;
 }
 
-@media (min-width: 768px) {
-  html {
+.carousel-caption {
+    position: absolute;
+}
+
+h1, h2, h3 {
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    text-shadow: 1px 1px 3px black;
+}
+
+p {
+    line-height: 2;
+}
+
+img {
+    object-fit:fill;
+}
+
+.sign {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 30%, rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6), inset -2px -2px 3px rgba(0, 0, 0, .6);
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+button a {
+    color: #fff;
+}
+
+button a:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+.sign:active {
+        box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6), inset 2px 2px 3px rgba(0, 0, 0, .6);  
+}
+
+
+
+@media (min-width: 1280px) {
+    html {
     font-size: 16px;
   }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+label {
+    margin-top: 20px;
+
+}
+.footer {
+    line-height: 60px;
 }
 
-body {
-  margin-bottom: 60px;
+td a {
+    text-decoration: none;
+    color: #000;
+
+}
+
+td a:hover {
+    text-shadow: 1px 1px 1px #000;
+    color: #fff;
+    font-weight: 100;
+}
+
+.book {
+    width: 50px;
+    height: auto;
+    margin: 10px;
 }
