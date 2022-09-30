@@ -8,9 +8,30 @@
 
   <ItemGroup>
     <Compile Remove="Content\**" />
+    <Compile Remove="NewFolder1\**" />
+    <Compile Remove="NewFolder\**" />
+    <Compile Remove="Properties\NewFolder\**" />
+    <Compile Remove="wwwroot\lib\NewFolder\**" />
+    <Compile Remove="wwwroot\NewFolder\**" />
     <Content Remove="Content\**" />
+    <Content Remove="NewFolder1\**" />
+    <Content Remove="NewFolder\**" />
+    <Content Remove="Properties\NewFolder\**" />
+    <Content Remove="wwwroot\lib\NewFolder\**" />
+    <Content Remove="wwwroot\NewFolder\**" />
     <EmbeddedResource Remove="Content\**" />
+    <EmbeddedResource Remove="NewFolder1\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <EmbeddedResource Remove="Properties\NewFolder\**" />
+    <EmbeddedResource Remove="wwwroot\lib\NewFolder\**" />
+    <EmbeddedResource Remove="wwwroot\NewFolder\**" />
     <None Remove="Content\**" />
+    <None Remove="NewFolder1\**" />
+    <None Remove="NewFolder\**" />
+    <None Remove="Properties\NewFolder\**" />
+    <None Remove="wwwroot\lib\NewFolder\**" />
+    <None Remove="wwwroot\NewFolder\**" />
+    <_WebToolingArtifacts Remove="Properties\NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>

@@ -71,8 +71,8 @@ namespace Yearbook.Controllers
         //                files.CopyTo(fs);
         //                fs.Flush();
         //            }
-        //            student.picture = "/picture/" + newFileName;
-        //            repo.InsertPicture(student);
+        //            student.Image = "/images/" + newFileName;
+        //            repo.InsertImage(student);
         //        }
         //    }
         //    return RedirectToAction("Index");

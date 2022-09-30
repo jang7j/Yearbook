@@ -8,13 +8,24 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                 <img class="book" src="/images/book.png" width="30" height="30" alt="">Yearbook</a>
 
-               <span> &copy; 2022 - YJ Productions - </span> 
-        </nav>
+
+
+</div>
+    <header>
+          <nav>
+            <div class="navbar d-flex justify-content-center">
+      
+                <div><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img class="home" src="/images/home.png" width="30" height="30" alt="Go Home" /></a></div>
+                                      
+                <div><a class="navbar-brand" asp-area="" asp-controller="Student" asp-action="Index">
+                     <img class="book" src="/images/book.png" width="10" height="10" alt="Find Student" /></a></div>
+                 
+                <div>&copy; 2022 - YJ Productions - </div>
+            </div>
+         </nav>
+        
         
     </header>
     <div class="container">

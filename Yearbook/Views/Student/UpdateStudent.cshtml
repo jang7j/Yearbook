@@ -11,6 +11,37 @@
 
 <label asp-for="LastName" class="control-label">Last Name</label>
     <input type="text" name="LastName" class="form-control" value="@Model.LastName" />
+
+   <label asp-for="Gender" class="control-label">Gender</label>
+    <input type="text" name="Gender" class="form-control" value="@Model.Gender" />
+
+    <label asp-for="State" class="control-label">State</label>
+    <input type="text" name="State" class="form-control" value="@Model.State" />
+
+    @* <div class="form-group">
+        <label for="">Gender</label>
+        <select class="form-control" name="Gender" value=""> 
+            @foreach (var g in Model.Genders)
+            {
+                <option value="">--Please choose an one--</option>
+                <option value="@g.Genders">@g.Genders @g.GenderName</option>
+                
+            }
+        </select>
+    </div>
+*@
+
+   @*  <div class="form-group">
+        <label for="">State</label>
+        <select class="form-control" name="State" value="" >
+            @foreach (var s in Model.States)
+            {
+                <option value="">--Please choose an one--</option>
+                <option value="@s.States">@s.States @s.StateName</option>
+            }
+        </select>
+    </div>
+*@
        
     <label asp-for="Email" class="control-label">Email</label>
     <input type="text" name="Email" class="form-control" value="@Model.Email" />

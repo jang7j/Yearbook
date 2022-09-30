@@ -13,6 +13,7 @@
      <div class="form-group">
         <label for="">Gender</label>
         <select class="form-control" name="Gender" value="" >
+            <option value="">--Please choose one--</option>
             @foreach (var g in Model.Genders)
             {
                 <option value="@g.Genders">@g.Genders @g.GenderName</option>
@@ -25,6 +26,7 @@
      <div class="form-group">
         <label for="">State</label>
         <select class="form-control" name="State" value="" >
+            <option value="">--Please choose one--</option>
             @foreach (var s in Model.States)
             {
                 <option value="@s.States">@s.States @s.StateName</option>

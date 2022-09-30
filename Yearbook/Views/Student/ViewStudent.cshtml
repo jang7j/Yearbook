@@ -1,49 +1,54 @@
 ﻿@model Student
 <h3>About @Model.FirstName @Model.LastName</h3>
 
-<table>
-    <tr>
-        <th>Student ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Picture </th>
-        <th>Gender</th>
-        <th>State</th>
-        <th>Email</th>
-        <th>Hobbies</th>
-        <th>Favorite Food</th>
-        <th>Favorite Song</th>
-        <th>Favorite Movie</th>
-        <th>Future Career</th>
-        <th>Quote</th>
-    </tr>
-    <tr>
-        <td>@Model.StudentID</td>
-        <td>@Model.FirstName</td>
-        <td>@Model.LastName</td>
-        <td>@Model.Picture</td>        
-        <td>@Model.Gender</td>
-        <td>@Model.States</td>
-        <td>@Model.Email</td>
-        <td>@Model.Hobbies</td>
-        <td>@Model.FavoriteFood</td>
-        <td>@Model.FavoriteSong</td>
-        <td>@Model.FavoriteMovie</td>
-        <td>@Model.FutureCareer</td>
-        <td>@Model.Quote</td>
-    </tr>
+<table class="table table-hover">
+    
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Picture </th>
+            <th scope="col">Gender</th>
+            <th scope="col">State</th>
+            <th scope="col">Email</th>
+            <th scope="col">Hobbies</th>
+            <th scope="col">Favorite Food</th>
+            <th scope="col">Favorite Song</th>
+            <th scope="col">Favorite Movie</th>
+            <th scope="col">Future Career</th>
+            <th scope="col" colspan="3">Quote</th>
+        </tr>
+   
+    
+        <tr>
+            <td scope="row">@Model.StudentID</td>
+            <td scope="row">@Model.FirstName</td>
+            <td scope="row">@Model.LastName</td>
+            <td scope="row">@Model.Image</td>
+            <td scope="row">@Model.Gender</td>
+            <td scope="row">@Model.State</td>
+            <td scope="row">@Model.Email</td>
+            <td scope="row">@Model.Hobbies</td>
+            <td scope="row">@Model.FavoriteFood</td>
+            <td scope="row">@Model.FavoriteSong</td>
+            <td scope="row">@Model.FavoriteMovie</td>
+            <td scope="row">@Model.FutureCareer</td>
+            <td scope="row" colspan="3">@Model.Quote</td>
+        </tr>
+    
 </table>
 
-<div style="display: block">
-    <a href="/Student/UpdateStudent/@Model.StudentID">Update Information</a>
-</div>
 
-<div style="display: block">
+  
+   <div class="btn-update-delete">
+ 
+  <button class="raise"><a href="/Student/UpdateStudent/@Model.StudentID">Update Info</a></button>
+ </div>
 
+ <div class="btn-update-delete">
     @using (Html.BeginForm("DeleteStudent", "Student", "Post"))
     {
-        <input type="hidden" asp-for="StudentID" value="@Model.StudentID" />
-        <input type="submit" onclick="Are you sure? Click ENTER to proceed." value="Delete this student" />
+        <button class="custom-btn btn-12"><span>Are you sure? </span><span>Delete Student</span></button>
     }
 </div>
 

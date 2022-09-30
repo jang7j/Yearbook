@@ -2,10 +2,10 @@
 {
     public class Student
     {
-        public int StudentID { get; set; } = 1;
+        public int StudentID { get; set; } 
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Picture { get; set; }
+        public string Image { get; set; }
         //public IEnumerable<Picture> Pictures { get; set; }
         public string Link { get; set; }
         public string Gender { get; set; }

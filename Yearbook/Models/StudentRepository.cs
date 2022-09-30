@@ -19,8 +19,8 @@ namespace Yearbook.Models
 
         public void CreateStudent(Student newStudent)
         {
-            _conn.Execute("INSERT INTO Student (StudentID, FirstName, LastName, Picture, Gender, State, Email, Hobbies, FavoriteFood, FavoriteSong, FavoriteMovie, FutureCareer, Quote) VALUES (@StudentID, @FirstName, @LastName, @Picture, @Gender, @State, @Email, @Hobbies, @FavoriteFood, @FavoriteSong, @FavoriteMovie, @FutureCareer, @Quote);",
-                new {studentid = newStudent.StudentID, firstname = newStudent.FirstName, lastname = newStudent.LastName, picture = newStudent.Picture, gender = newStudent.Gender, state = newStudent.State, email = newStudent.Email, hobbies = newStudent.Hobbies, favoritefood = newStudent.FavoriteFood, favoritesong = newStudent.FavoriteSong, favoritemovie = newStudent.FavoriteMovie, futurecareer = newStudent.FutureCareer, quote = newStudent.Quote } );
+            _conn.Execute("INSERT INTO Student (StudentID, FirstName, LastName, Image, Gender, State, Email, Hobbies, FavoriteFood, FavoriteSong, FavoriteMovie, FutureCareer, Quote) VALUES (@StudentID, @FirstName, @LastName, @Image, @Gender, @State, @Email, @Hobbies, @FavoriteFood, @FavoriteSong, @FavoriteMovie, @FutureCareer, @Quote);",
+                new {studentid = newStudent.StudentID, firstname = newStudent.FirstName, lastname = newStudent.LastName, image = newStudent.Image, gender = newStudent.Gender, state = newStudent.State, email = newStudent.Email, hobbies = newStudent.Hobbies, favoritefood = newStudent.FavoriteFood, favoritesong = newStudent.FavoriteSong, favoritemovie = newStudent.FavoriteMovie, futurecareer = newStudent.FutureCareer, quote = newStudent.Quote } );
         }
 
         public Student SelectState()
@@ -43,16 +43,11 @@ namespace Yearbook.Models
             return _conn.Query<Gender>("select * from gender;" );
         }
       
-        public void InsertPicture(Student student)
-        {
-            _conn.Execute("UPDATE STUDENT SET PICTURE = @picture WHERE STUDENTNAME = @studentname;",
-                new { studentname = student.FirstName });
-        }
-
+        
         public void UpdateStudent(Student student)
         {
-            _conn.Execute("UPDATE STUDENT SET firstName = @firstName, lastName = @lastName, Picture = @picture, Gender = @gender, State = @state, Email = @email, Hobbies = @hobbies, FavoriteFood = @favoritefood, FavoriteSong = @favoritesong, FavoriteMovie = @favoritemovie, FutureCareer = @futurecareer, Quote = @quote WHERE StudentID = @studentid;",
-                new { studentid = student.StudentID, firstname = student.FirstName, lastname = student.LastName, picture = student.Picture, gender= student.Gender, state = student.State, email = student.Email, hobbies = student.Hobbies, favoritefood = student.FavoriteFood, favoritesong = student.FavoriteSong, favoritemovie= student.FavoriteMovie, futurecareer = student.FutureCareer, quote = student.Quote });
+            _conn.Execute("UPDATE STUDENT SET firstName = @firstName, lastName = @lastName, Image = @image, Gender = @gender, State = @state, Email = @email, Hobbies = @hobbies, FavoriteFood = @favoritefood, FavoriteSong = @favoritesong, FavoriteMovie = @favoritemovie, FutureCareer = @futurecareer, Quote = @quote WHERE StudentID = @studentid;",
+                new { studentid = student.StudentID, firstname = student.FirstName, lastname = student.LastName, image = student.Image, gender= student.Gender, state = student.State, email = student.Email, hobbies = student.Hobbies, favoritefood = student.FavoriteFood, favoritesong = student.FavoriteSong, favoritemovie= student.FavoriteMovie, futurecareer = student.FutureCareer, quote = student.Quote });
         }
 
         public Student ViewStudent(int id)
@@ -62,6 +57,18 @@ namespace Yearbook.Models
         public void DeleteStudent(Student studentName)
         {
             _conn.Execute("DELETE FROM STUDENT WHERE STUDENTID = @STUDENTID;", new { studentid = studentName.StudentID });
+        }
+
+        public void InsertImage(Student student)
+        {
+            _conn.Execute("UPDATE STUDENT SET IMAGE = @image WHERE STUDENTID = @studentid;",
+                new { image = student.Image, studentid = student.StudentID });
+        }
+
+        public IEnumerable<Student> SearchStudents(string searchString)
+        {
+            return _conn.Query<Student>("Search * from student where name like @name;",
+                new { name = "%" + searchString + "%" });
         }
 
         
