@@ -48,6 +48,7 @@
  <div class="btn-update-delete">
     @using (Html.BeginForm("DeleteStudent", "Student", "Post"))
     {
+        <input asp-for="StudentID" type="hidden" value="@Model.StudentID"/>
         <button class="custom-btn btn-12"><span>Are you sure? </span><span>Delete Student</span></button>
     }
 </div>
