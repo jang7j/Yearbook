@@ -40,10 +40,9 @@
 
 
   
-   <div class="btn-update-delete">
  
-  <button class="raise"><a href="/Student/UpdateStudent/@Model.StudentID">Update Info</a></button>
- </div>
+  <button style="background-color: black; border: 1px dashed #000; color: #eee"><a href="/Student/UpdateStudent/@Model.StudentID">Update Info</a></button>
+ 
 
  <div class="btn-update-delete">
     @using (Html.BeginForm("DeleteStudent", "Student", "Post"))

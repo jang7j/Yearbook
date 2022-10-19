@@ -10,7 +10,7 @@
         public string Link { get; set; }
         public string Gender { get; set; }
         public IEnumerable<Gender> Genders { get; set; }
-        //public string[] States { get; set; } = new string[] {Male, Female, Undisclosed};
+      
         public string State { get; set; }               //the state column itself
         public IEnumerable<State> States { get; set; }  //the dropdown with collection inside
         public string Email { get; set; }
